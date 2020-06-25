@@ -35,7 +35,7 @@ RUN apk --no-cache add \
 
 
 # Download acrn-kernel
-ENV KERNEL_VERSION acrn-2019w39.3-150000p
+ENV KERNEL_VERSION acrn-2020w23.6-180000p
 ENV KERNEL_SOURCE=https://github.com/projectacrn/acrn-kernel/archive/${KERNEL_VERSION}.tar.gz
 RUN \
     [ -f "$(basename ${KERNEL_SOURCE})" ] || curl -fsSLO "${KERNEL_SOURCE}" && \
