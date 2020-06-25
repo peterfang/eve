@@ -1,0 +1,86 @@
+From 3545e4fbe11394e09a7e10eea9a13dccdba45eed Mon Sep 17 00:00:00 2001
+From: Peter Fang <peter.fang@intel.com>
+Date: Thu, 11 Jun 2020 22:29:33 -0700
+Subject: [PATCH 1/6] config: use sha1 to sign the modules
+
+Signed-off-by: Peter Fang <peter.fang@intel.com>
+---
+ kernel_config_uefi_sos | 17 ++++++++++-------
+ 1 file changed, 10 insertions(+), 7 deletions(-)
+
+diff --git a/kernel_config_uefi_sos b/kernel_config_uefi_sos
+index 246ffec2e3d9..c4f845e0ee2c 100644
+--- a/kernel_config_uefi_sos
++++ b/kernel_config_uefi_sos
+@@ -1,17 +1,16 @@
+ #
+ # Automatically generated file; DO NOT EDIT.
+-# Linux/x86 5.4.28 Kernel Configuration
++# Linux/x86 5.4.43 Kernel Configuration
+ #
+ 
+ #
+-# Compiler: gcc (Clear Linux OS for Intel Architecture) 8.1.1 20180514
++# Compiler: gcc (Clear Linux OS for Intel Architecture) 8.2.1 20180502
+ #
+ CONFIG_CC_IS_GCC=y
+-CONFIG_GCC_VERSION=80101
++CONFIG_GCC_VERSION=80201
+ CONFIG_CLANG_VERSION=0
+ CONFIG_CC_CAN_LINK=y
+ CONFIG_CC_HAS_ASM_GOTO=y
+-CONFIG_CC_HAS_WARN_MAYBE_UNINITIALIZED=y
+ CONFIG_IRQ_WORK=y
+ CONFIG_BUILDTIME_EXTABLE_SORT=y
+ CONFIG_THREAD_INFO_IN_TASK=y
+@@ -762,12 +761,12 @@ CONFIG_ASM_MODVERSIONS=y
+ CONFIG_MODULE_SIG=y
+ CONFIG_MODULE_SIG_FORCE=y
+ CONFIG_MODULE_SIG_ALL=y
+-# CONFIG_MODULE_SIG_SHA1 is not set
++CONFIG_MODULE_SIG_SHA1=y
+ # CONFIG_MODULE_SIG_SHA224 is not set
+ # CONFIG_MODULE_SIG_SHA256 is not set
+ # CONFIG_MODULE_SIG_SHA384 is not set
+-CONFIG_MODULE_SIG_SHA512=y
+-CONFIG_MODULE_SIG_HASH="sha512"
++# CONFIG_MODULE_SIG_SHA512 is not set
++CONFIG_MODULE_SIG_HASH="sha1"
+ # CONFIG_MODULE_COMPRESS is not set
+ # CONFIG_MODULE_ALLOW_MISSING_NAMESPACE_IMPORTS is not set
+ # CONFIG_UNUSED_SYMBOLS is not set
+@@ -1840,6 +1839,7 @@ CONFIG_INTEL_MEI_TXE=y
+ CONFIG_MISC_RTSX_PCI=m
+ # CONFIG_MISC_RTSX_USB is not set
+ # CONFIG_HABANA_AI is not set
++# CONFIG_INTEL_GNA is not set
+ # end of Misc devices
+ 
+ CONFIG_HAVE_IDE=y
+@@ -2328,6 +2328,7 @@ CONFIG_REALTEK_PHY=m
+ # CONFIG_TERANETICS_PHY is not set
+ # CONFIG_VITESSE_PHY is not set
+ # CONFIG_XILINX_GMII2RGMII is not set
++# CONFIG_INTEL_GPY_PHY is not set
+ # CONFIG_MICREL_KS8995MA is not set
+ CONFIG_PPP=y
+ CONFIG_PPP_BSDCOMP=y
+@@ -5352,6 +5353,7 @@ CONFIG_INTEL_TELEMETRY=y
+ # CONFIG_I2C_MULTI_INSTANTIATE is not set
+ # CONFIG_INTEL_ATOMISP2_PM is not set
+ # CONFIG_PCENGINES_APU2 is not set
++# CONFIG_INTEL_SAFETY_ISLAND is not set
+ 
+ #
+ # Intel Speed Select Technology interface support
+@@ -6024,6 +6026,7 @@ CONFIG_ACRN_TRACE=y
+ CONFIG_ACRN_HVLOG=y
+ CONFIG_ACRN_HV_NPK_LOG=y
+ CONFIG_ACRN_VHM=y
++# CONFIG_X86_TCC_PTCM is not set
+ # end of Device Drivers
+ 
+ #
+-- 
+2.27.0
+

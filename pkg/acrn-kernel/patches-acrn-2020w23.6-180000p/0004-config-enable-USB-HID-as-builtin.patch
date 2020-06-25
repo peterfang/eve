@@ -1,0 +1,35 @@
+From 89f2ff0add09a3e930473e8d1e821b60976f0644 Mon Sep 17 00:00:00 2001
+From: Peter Fang <peter.fang@intel.com>
+Date: Thu, 11 Jun 2020 22:39:33 -0700
+Subject: [PATCH 4/6] config: enable USB HID as builtin
+
+Signed-off-by: Peter Fang <peter.fang@intel.com>
+---
+ kernel_config_uefi_sos | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/kernel_config_uefi_sos b/kernel_config_uefi_sos
+index 036ba7905a5e..770520e524e1 100644
+--- a/kernel_config_uefi_sos
++++ b/kernel_config_uefi_sos
+@@ -4610,16 +4610,9 @@ CONFIG_HID_SENSOR_HUB=m
+ #
+ # USB HID support
+ #
+-CONFIG_USB_HID=m
++CONFIG_USB_HID=y
+ CONFIG_HID_PID=y
+ CONFIG_USB_HIDDEV=y
+-
+-#
+-# USB HID Boot Protocol drivers
+-#
+-# CONFIG_USB_KBD is not set
+-# CONFIG_USB_MOUSE is not set
+-# end of USB HID Boot Protocol drivers
+ # end of USB HID support
+ 
+ #
+-- 
+2.27.0
+

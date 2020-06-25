@@ -1,0 +1,77 @@
+From 3bcea3ac687429c85b588b552179502164b4be81 Mon Sep 17 00:00:00 2001
+From: Peter Fang <peter.fang@intel.com>
+Date: Thu, 11 Jun 2020 23:22:10 -0700
+Subject: [PATCH 6/6] config: enable virtio-blk and intel-iommu
+
+This is required to run SOS in QEMU.
+
+Signed-off-by: Peter Fang <peter.fang@intel.com>
+---
+ kernel_config_uefi_sos | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+
+diff --git a/kernel_config_uefi_sos b/kernel_config_uefi_sos
+index 96ebf77c4109..95ab8c24ec60 100644
+--- a/kernel_config_uefi_sos
++++ b/kernel_config_uefi_sos
+@@ -276,6 +276,7 @@ CONFIG_ARCH_WANT_GENERAL_HUGETLB=y
+ CONFIG_ZONE_DMA32=y
+ CONFIG_AUDIT_ARCH=y
+ CONFIG_ARCH_SUPPORTS_DEBUG_PAGEALLOC=y
++CONFIG_HAVE_INTEL_TXT=y
+ CONFIG_X86_64_SMP=y
+ CONFIG_ARCH_SUPPORTS_UPROBES=y
+ CONFIG_FIX_EARLYCON_MEM=y
+@@ -1719,7 +1720,8 @@ CONFIG_BLK_DEV_RAM_COUNT=16
+ CONFIG_BLK_DEV_RAM_SIZE=16384
+ # CONFIG_CDROM_PKTCDVD is not set
+ # CONFIG_ATA_OVER_ETH is not set
+-# CONFIG_VIRTIO_BLK is not set
++CONFIG_VIRTIO_BLK=y
++# CONFIG_VIRTIO_BLK_SCSI is not set
+ # CONFIG_BLK_DEV_RBD is not set
+ # CONFIG_BLK_DEV_RSXX is not set
+ 
+@@ -5166,6 +5168,7 @@ CONFIG_UIO_PCI_GENERIC=m
+ # CONFIG_UIO_NETX is not set
+ # CONFIG_UIO_PRUSS is not set
+ # CONFIG_UIO_MF624 is not set
++# CONFIG_VFIO is not set
+ CONFIG_VIRT_DRIVERS=y
+ # CONFIG_VBOXGUEST is not set
+ CONFIG_VIRTIO=y
+@@ -5397,6 +5400,8 @@ CONFIG_CLKBLD_I8253=y
+ CONFIG_MAILBOX=y
+ CONFIG_PCC=y
+ # CONFIG_ALTERA_MBOX is not set
++CONFIG_IOMMU_IOVA=y
++CONFIG_IOMMU_API=y
+ CONFIG_IOMMU_SUPPORT=y
+ 
+ #
+@@ -5405,8 +5410,13 @@ CONFIG_IOMMU_SUPPORT=y
+ # end of Generic IOMMU Pagetable Support
+ 
+ # CONFIG_IOMMU_DEBUGFS is not set
++# CONFIG_IOMMU_DEFAULT_PASSTHROUGH is not set
+ # CONFIG_AMD_IOMMU is not set
+-# CONFIG_INTEL_IOMMU is not set
++CONFIG_DMAR_TABLE=y
++CONFIG_INTEL_IOMMU=y
++# CONFIG_INTEL_IOMMU_SVM is not set
++CONFIG_INTEL_IOMMU_DEFAULT_ON=y
++CONFIG_INTEL_IOMMU_FLOPPY_WA=y
+ # CONFIG_IRQ_REMAP is not set
+ 
+ #
+@@ -6271,6 +6281,7 @@ CONFIG_SECURITY_NETWORK=y
+ # CONFIG_PAGE_TABLE_ISOLATION is not set
+ # CONFIG_SECURITY_NETWORK_XFRM is not set
+ # CONFIG_SECURITY_PATH is not set
++# CONFIG_INTEL_TXT is not set
+ CONFIG_LSM_MMAP_MIN_ADDR=65536
+ CONFIG_HAVE_HARDENED_USERCOPY_ALLOCATOR=y
+ CONFIG_HARDENED_USERCOPY=y
+-- 
+2.27.0
+

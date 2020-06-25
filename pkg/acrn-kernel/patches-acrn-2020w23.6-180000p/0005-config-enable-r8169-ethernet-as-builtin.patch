@@ -1,0 +1,35 @@
+From 6e0b4353b12d29d9287cc877c739ad10a8f474b9 Mon Sep 17 00:00:00 2001
+From: Peter Fang <peter.fang@intel.com>
+Date: Thu, 11 Jun 2020 22:41:12 -0700
+Subject: [PATCH 5/6] config: enable r8169 ethernet as builtin
+
+Signed-off-by: Peter Fang <peter.fang@intel.com>
+---
+ kernel_config_uefi_sos | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/kernel_config_uefi_sos b/kernel_config_uefi_sos
+index 770520e524e1..96ebf77c4109 100644
+--- a/kernel_config_uefi_sos
++++ b/kernel_config_uefi_sos
+@@ -2251,7 +2251,7 @@ CONFIG_8139TOO_PIO=y
+ # CONFIG_8139TOO_TUNE_TWISTER is not set
+ # CONFIG_8139TOO_8129 is not set
+ # CONFIG_8139_OLD_RX_RESET is not set
+-CONFIG_R8169=m
++CONFIG_R8169=y
+ CONFIG_NET_VENDOR_RENESAS=y
+ # CONFIG_NET_VENDOR_ROCKER is not set
+ # CONFIG_NET_VENDOR_SAMSUNG is not set
+@@ -2320,7 +2320,7 @@ CONFIG_PHYLIB=y
+ # CONFIG_NATIONAL_PHY is not set
+ # CONFIG_NXP_TJA11XX_PHY is not set
+ # CONFIG_QSEMI_PHY is not set
+-CONFIG_REALTEK_PHY=m
++CONFIG_REALTEK_PHY=y
+ # CONFIG_RENESAS_PHY is not set
+ # CONFIG_ROCKCHIP_PHY is not set
+ # CONFIG_SMSC_PHY is not set
+-- 
+2.27.0
+
