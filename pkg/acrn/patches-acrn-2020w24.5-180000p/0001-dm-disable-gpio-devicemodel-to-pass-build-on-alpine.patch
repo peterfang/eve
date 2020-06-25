@@ -1,0 +1,25 @@
+From 812d3949927bcb61e2239a7c14e1764c97061189 Mon Sep 17 00:00:00 2001
+From: Peter Fang <peter.fang@intel.com>
+Date: Fri, 12 Jun 2020 01:36:09 -0700
+Subject: [PATCH 1/5] dm: disable gpio devicemodel to pass build on alpine
+
+Signed-off-by: Peter Fang <peter.fang@intel.com>
+---
+ devicemodel/Makefile | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/devicemodel/Makefile b/devicemodel/Makefile
+index 3cfae455..642edc43 100644
+--- a/devicemodel/Makefile
++++ b/devicemodel/Makefile
+@@ -126,7 +126,6 @@ SRCS += hw/pci/virtio/virtio_mei.c
+ SRCS += hw/pci/virtio/virtio_coreu.c
+ SRCS += hw/pci/virtio/virtio_hdcp.c
+ SRCS += hw/pci/virtio/virtio_rpmb.c
+-SRCS += hw/pci/virtio/virtio_gpio.c
+ SRCS += hw/pci/irq.c
+ SRCS += hw/pci/uart.c
+ SRCS += hw/pci/gvt.c
+-- 
+2.27.0
+

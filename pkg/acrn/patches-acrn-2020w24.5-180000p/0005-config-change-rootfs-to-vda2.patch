@@ -1,0 +1,26 @@
+From e02cb3c4b81789be763087d44e866a28a4836982 Mon Sep 17 00:00:00 2001
+From: Peter Fang <peter.fang@intel.com>
+Date: Fri, 12 Jun 2020 07:33:58 -0700
+Subject: [PATCH 5/5] config: change rootfs to vda2
+
+Signed-off-by: Peter Fang <peter.fang@intel.com>
+---
+ misc/acrn-config/xmls/config-xmls/qemu/sdc.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/misc/acrn-config/xmls/config-xmls/qemu/sdc.xml b/misc/acrn-config/xmls/config-xmls/qemu/sdc.xml
+index 79d87a74..e277fba2 100644
+--- a/misc/acrn-config/xmls/config-xmls/qemu/sdc.xml
++++ b/misc/acrn-config/xmls/config-xmls/qemu/sdc.xml
+@@ -88,7 +88,7 @@
+         <pci_dev desc="pci device"></pci_dev>
+     </pci_devs>
+     <board_private>
+-        <rootfs desc="rootfs for Linux kernel">/dev/vda1</rootfs>
++        <rootfs desc="rootfs for Linux kernel">/dev/vda2</rootfs>
+         <bootargs desc="Specify kernel boot arguments">
+         earlyprintk=serial,ttyS0,115200n8 rw rootwait console=tty0 consoleblank=0 no_timer_check ignore_loglevel
+         ignore_loglevel no_timer_check intel_iommu=off tsc=reliable hvlog=2M@0x1FE00000
+-- 
+2.27.0
+

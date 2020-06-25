@@ -1,0 +1,26 @@
+From ebf015c6fc6569acefd07e2366d8b507a0f7df72 Mon Sep 17 00:00:00 2001
+From: Peter Fang <peter.fang@intel.com>
+Date: Fri, 12 Jun 2020 01:38:12 -0700
+Subject: [PATCH 2/5] dm: disable acrn-crashlog to pass build on alpine
+
+Signed-off-by: Peter Fang <peter.fang@intel.com>
+---
+ misc/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/misc/Makefile b/misc/Makefile
+index 2663eab2..90b73a43 100644
+--- a/misc/Makefile
++++ b/misc/Makefile
+@@ -4,7 +4,7 @@ RELEASE ?= 0
+ 
+ .PHONY: all acrn-crashlog acrnlog acrn-manager acrntrace acrnbridge life_mngr
+ ifeq ($(RELEASE),0)
+-all: acrn-crashlog acrnlog acrn-manager acrntrace acrnbridge
++all: acrnlog acrn-manager acrntrace acrnbridge
+ else
+ all: acrn-manager acrnbridge
+ endif
+-- 
+2.27.0
+
