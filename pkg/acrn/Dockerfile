@@ -54,7 +54,7 @@ RUN set -e && for patch in /patches/*.patch; do \
     done
 
 COPY grub-hv.cfg /out/EFI/BOOT/grub-hv.cfg
-RUN mkdir -p /out/boot /out/lib /out/usr/bin /out/usr/lib/systemd/system \
+RUN mkdir -p /out/boot /out/lib/modules /out/usr/bin /out/usr/lib/systemd/system \
              /out/usr/share/acrn/bios /out/usr/share/acrn/samples/generic \
              /out/usr/share/acrn/samples/nuc /out/usr/lib/acrn
 RUN if [ `uname -m` = "x86_64" ] ; then \
